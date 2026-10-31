@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Nuno logo: a highlighted word and a text cursor, on Apple's 824px icon grid.
+       Same mark as www/src/app/icon.svg. -->
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.28" />
+    </filter>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="#1c1917" filter="url(#shadow)" />
+  <rect x="270" y="462" width="330" height="100" rx="50" fill="#fef08a" />
+  <rect x="650" y="352" width="56" height="320" rx="28" fill="#ffffff" />
+</svg>

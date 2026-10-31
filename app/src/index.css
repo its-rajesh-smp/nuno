@@ -1,0 +1,187 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+@import '@fontsource/ibm-plex-mono/400.css';
+
+/*
+ * Nuno identity (calm-product-design):
+ *   accent    butter yellow, a highlighter for "this one"
+ *   neutrals  warm stone
+ *   mono      IBM Plex Mono
+ *   signature key caps for shortcuts
+ */
+
+@theme inline {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+@theme {
+  /* Neutrals (warm stone) */
+  --color-canvas: #fafaf9;
+  --color-surface: #ffffff;
+  --color-sunken: #f5f5f4;
+  --color-ink: #1c1917;
+  --color-ink-soft: #292524;
+  --color-muted: #57534e;
+  --color-subtle: #a8a29e;
+  --color-line: #e7e5e4;
+  --color-line-strong: #d6d3d1;
+
+  /* The one accent */
+  --color-accent: #fef08a;
+  --color-accent-deep: #fde047;
+  --color-accent-edge: #eab308;
+
+  /* Status (sparingly) */
+  --color-ember: #ea7a1f;
+  --color-danger: #dc2626;
+  --color-success: #16a34a;
+
+  /* Dark product stage */
+  --color-stage: #1c1917;
+  --color-stage-line: #2e2a27;
+
+  /* Pastel tints: card fill, card border, title colour */
+  --color-violet-tint: #f6f1ff;  --color-violet-edge: #e6dbff;  --color-violet-ink: #7c3aed;
+  --color-sky-tint: #eef6fd;     --color-sky-edge: #d4e8f8;     --color-sky-ink: #0284c7;
+  --color-peach-tint: #fdf4e9;   --color-peach-edge: #f6e0c6;   --color-peach-ink: #c2410c;
+  --color-mint-tint: #effbf1;    --color-mint-edge: #cdeed4;    --color-mint-ink: #15803d;
+
+  /* Shadows: soft and low, tinted with ink */
+  --shadow-card: 0 1px 2px rgb(28 25 23 / 0.04), 0 12px 32px -20px rgb(28 25 23 / 0.18);
+  --shadow-float: 0 8px 30px -12px rgb(28 25 23 / 0.18);
+  --shadow-window: 0 1px 0 rgb(28 25 23 / 0.04), 0 30px 70px -30px rgb(0 0 0 / 0.6);
+  --shadow-key: 0 2px 0 var(--color-line-strong);
+
+  --animate-pop-in: pop-in 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(4px) scale(0.98);
+    }
+  }
+}
+
+@utility drag-region {
+  -webkit-app-region: drag;
+}
+
+@utility no-drag {
+  -webkit-app-region: no-drag;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply overflow-hidden bg-canvas font-sans text-ink antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  ::selection {
+    @apply bg-accent text-ink;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/*
+ * Note content. The editor DOM is written by contentEditable, not React,
+ * so its blocks are styled here rather than with utility classes.
+ */
+@layer components {
+  .note-editor {
+    @apply text-[16px] leading-relaxed text-ink-soft outline-none;
+    overflow-wrap: anywhere;
+  }
+
+  .note-editor > * {
+    @apply relative my-px px-0.5 py-[3px];
+  }
+
+  .note-editor h1,
+  .note-editor h2,
+  .note-editor h3 {
+    @apply font-medium text-ink;
+  }
+
+  .note-editor h1 {
+    @apply mt-8 text-[30px] leading-tight tracking-[-0.025em];
+  }
+
+  .note-editor h2 {
+    @apply mt-6 text-[24px] leading-snug tracking-[-0.02em];
+  }
+
+  .note-editor h3 {
+    @apply mt-4 text-[19px] leading-snug font-semibold tracking-[-0.01em];
+  }
+
+  .note-editor > :first-child {
+    @apply mt-0;
+  }
+
+  .note-editor ul {
+    @apply list-disc pl-[1.6em];
+  }
+
+  .note-editor ol {
+    @apply list-decimal pl-[1.6em];
+  }
+
+  .note-editor li {
+    @apply py-[3px] pl-0.5 marker:text-subtle;
+  }
+
+  .note-editor blockquote {
+    @apply border-l-[3px] border-accent-edge pl-4 text-muted;
+  }
+
+  .note-editor pre {
+    @apply rounded-xl border border-line bg-sunken px-4 py-3.5 font-mono text-[14px] leading-relaxed whitespace-pre-wrap;
+  }
+
+  .note-editor > hr {
+    @apply my-4 h-px border-0 bg-line p-0;
+  }
+
+  .note-editor .todo {
+    @apply pl-7;
+  }
+
+  .note-editor .todo::after {
+    @apply absolute top-[calc(3px+0.8125em-8px)] left-0.5 size-4 cursor-pointer rounded-[5px] border-[1.5px] border-line-strong bg-surface content-[''];
+  }
+
+  .note-editor .todo.checked {
+    @apply text-subtle line-through;
+  }
+
+  /* Checked: ink box with a white tick, the same as a primary action. */
+  .note-editor .todo.checked::after {
+    @apply border-ink bg-ink bg-center bg-no-repeat;
+    background-size: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+
+  /* Height-0 float keeps the caret at the start of an empty block. */
+  .note-editor [data-ph]::before {
+    @apply pointer-events-none float-left h-0 text-subtle no-underline content-[attr(data-ph)];
+  }
+}
