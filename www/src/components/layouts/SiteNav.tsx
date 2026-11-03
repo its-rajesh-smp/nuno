@@ -24,7 +24,7 @@ export function SiteNav() {
           scrolled ? 'shadow-float' : 'shadow-card',
         )}
       >
-        <a href="#top" className="flex items-center" aria-label="Nuno home">
+        <a href="#top" className="flex items-center" aria-label="Zodnote home">
           <Logo />
         </a>
         <ul className="hidden items-center gap-1 lg:flex">

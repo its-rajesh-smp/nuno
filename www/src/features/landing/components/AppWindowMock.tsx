@@ -10,10 +10,10 @@ const NOTES = [
   { title: 'Groceries', time: 'Oct 26' },
 ];
 
-// A faithful, light-mode mock of the Nuno app window.
+// A faithful, light-mode mock of the Zodnote app window.
 export function AppWindowMock() {
   return (
-    <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl bg-surface text-left shadow-window" aria-label="The Nuno app" role="img">
+    <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl bg-surface text-left shadow-window" aria-label="The Zodnote app" role="img">
       <div className="grid grid-cols-1 sm:grid-cols-[220px_minmax(0,1fr)]">
         <aside className="hidden border-r border-line bg-canvas p-3 sm:block">
           <div className="flex gap-2 px-1 pt-1 pb-5" aria-hidden="true">

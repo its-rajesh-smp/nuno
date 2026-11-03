@@ -1,7 +1,7 @@
 import { contextBridge, ipcRenderer } from 'electron';
-import { MENU_EVENTS, type NunoBridge } from '@shared/bridge';
+import { MENU_EVENTS, type ZodnoteBridge } from '@shared/bridge';
 
-const bridge: NunoBridge = {
+const bridge: ZodnoteBridge = {
   listNotes: () => ipcRenderer.invoke('notes:list'),
   getNote: (id) => ipcRenderer.invoke('notes:get', id),
   createNote: (draft) => ipcRenderer.invoke('notes:create', draft),
@@ -18,4 +18,4 @@ const bridge: NunoBridge = {
   },
 };
 
-contextBridge.exposeInMainWorld('nuno', bridge);
+contextBridge.exposeInMainWorld('zodnote', bridge);

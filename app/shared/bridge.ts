@@ -32,7 +32,7 @@ export type MenuEvent = 'menu:new-note' | 'menu:toggle-sidebar';
 
 export const MENU_EVENTS: MenuEvent[] = ['menu:new-note', 'menu:toggle-sidebar'];
 
-export interface NunoBridge {
+export interface ZodnoteBridge {
   listNotes: () => Promise<NoteMeta[]>;
   getNote: (id: string) => Promise<Note | null>;
   createNote: (draft?: NoteDraft) => Promise<Note>;

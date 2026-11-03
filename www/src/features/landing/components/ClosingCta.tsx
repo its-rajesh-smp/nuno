@@ -24,7 +24,7 @@ export function ClosingCta() {
               Start writing in seconds.
             </h2>
             <p className="mt-4 text-[17px] leading-relaxed text-muted text-pretty sm:text-[18px]">
-              Download Nuno, open it, and type. That's the whole setup.
+              Download Zodnote, open it, and type. That's the whole setup.
             </p>
             <Button asChild size="lg" className="mt-8">
               <a href={site.downloadUrl}>

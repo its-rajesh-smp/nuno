@@ -31,7 +31,7 @@ export function AppLayout({ sidebar, children, sidebarOpen, isDesktop, onToggleS
           type="button"
           aria-label="Close sidebar"
           onClick={onToggleSidebar}
-          className="fixed inset-0 z-30 cursor-default bg-ink/20 backdrop-blur-[2px]"
+          className="fixed inset-0 z-30 cursor-default bg-stone-900/20 backdrop-blur-[2px] dark:bg-black/60"
         />
       )}
       <main className="flex min-w-0 flex-1 flex-col bg-surface">

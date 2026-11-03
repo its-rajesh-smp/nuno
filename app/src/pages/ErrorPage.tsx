@@ -17,7 +17,7 @@ export function ErrorPage() {
       <p className="max-w-md text-[15px] text-muted text-pretty">{message}</p>
       <p className="text-[13px] text-subtle">Your notes are safe on disk.</p>
       <Button className="no-drag mt-3" onClick={() => navigate(0)}>
-        Reload Nuno
+        Reload Zodnote
       </Button>
     </div>
   );

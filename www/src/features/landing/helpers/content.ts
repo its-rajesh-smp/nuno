@@ -36,7 +36,7 @@ export const FEATURES: Feature[] = [
   {
     lead: 'Right where',
     title: 'you left off',
-    description: 'Your last note is open and ready the moment Nuno starts.',
+    description: 'Your last note is open and ready the moment Zodnote starts.',
     tone: 'plain',
   },
   {
@@ -59,7 +59,7 @@ export const SHORTCUTS: Shortcut[] = [
 ];
 
 export const STEPS: Step[] = [
-  { title: 'Open Nuno', description: 'Your last note is already there. Press ⌘N for a fresh one.', visual: 'open' },
+  { title: 'Open Zodnote', description: 'Your last note is already there. Press ⌘N for a fresh one.', visual: 'open' },
   { title: 'Type /', description: 'Pick a heading, list or to-do, or just keep writing.', visual: 'slash' },
   { title: 'Close it', description: 'Every keystroke is saved to your Mac as you go.', visual: 'saved' },
 ];
@@ -75,16 +75,16 @@ export const FACTS: Fact[] = [
 export const FAQS: FaqEntry[] = [
   {
     question: 'Do I need an account?',
-    answer: 'No. There is no sign-up and no login. Open Nuno and start writing.',
+    answer: 'No. There is no sign-up and no login. Open Zodnote and start writing.',
   },
   {
     question: 'Where are my notes saved?',
     answer:
-      'On your Mac, in ~/Library/Application Support/Nuno/notes. Each note is its own small file, so you can back the folder up like anything else.',
+      'On your Mac, in ~/Library/Application Support/Zodnote/notes. Each note is its own small file, so you can back the folder up like anything else.',
   },
   {
     question: 'Does it work offline?',
-    answer: 'Yes. Nuno never connects to the internet, so it works the same on a plane as at your desk.',
+    answer: 'Yes. Zodnote never connects to the internet, so it works the same on a plane as at your desk.',
   },
   {
     question: 'What can I format?',
@@ -93,6 +93,6 @@ export const FAQS: FaqEntry[] = [
   },
   {
     question: 'Is there a Windows or iPhone version?',
-    answer: 'Not yet. Nuno is Mac-only for now, so it can stay small and fast.',
+    answer: 'Not yet. Zodnote is Mac-only for now, so it can stay small and fast.',
   },
 ];

@@ -26,7 +26,7 @@ export default defineConfig({
       tailwindcss(),
       // React Fast Refresh injects an inline script in dev, which the CSP would block.
       {
-        name: 'nuno:dev-csp',
+        name: 'zodnote:dev-csp',
         apply: 'serve',
         transformIndexHtml: (html) => html.replace(/<meta\s+http-equiv="Content-Security-Policy"[\s\S]*?\/>/, ''),
       },

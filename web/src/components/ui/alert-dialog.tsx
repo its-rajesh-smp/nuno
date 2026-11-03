@@ -8,7 +8,7 @@ export const AlertDialog = AlertDialogPrimitive.Root;
 export function AlertDialogContent({ className, children, ...props }: ComponentProps<typeof AlertDialogPrimitive.Content>) {
   return (
     <AlertDialogPrimitive.Portal>
-      <AlertDialogPrimitive.Overlay className="fixed inset-0 z-50 bg-ink/20 backdrop-blur-[2px]" />
+      <AlertDialogPrimitive.Overlay className="fixed inset-0 z-50 bg-stone-900/20 backdrop-blur-[2px] dark:bg-black/60" />
       <AlertDialogPrimitive.Content
         data-slot="alert-dialog-content"
         className={cn(

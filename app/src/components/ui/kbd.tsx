@@ -1,7 +1,7 @@
 import type { ComponentProps } from 'react';
 import { cn } from '@/utils/cn';
 
-// Key cap, Nuno's signature detail for shortcuts.
+// Key cap, Zodnote's signature detail for shortcuts.
 export function Kbd({ className, ...props }: ComponentProps<'kbd'>) {
   return (
     <kbd

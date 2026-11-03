@@ -1,6 +1,7 @@
 import { PanelLeft, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/Logo';
+import { SidebarFooter } from '@/features/account/components/SidebarFooter';
 import { NoteList } from './NoteList';
 
 interface NoteSidebarProps {
@@ -26,6 +27,7 @@ export function NoteSidebar({ onNewNote, onOpen, onDelete, onHide }: NoteSidebar
         </Button>
       </div>
       <NoteList onOpen={onOpen} onDelete={onDelete} />
+      <SidebarFooter />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import type { ComponentProps } from 'react';
 import { cn } from '@/utils/cn';
 
-// Key cap, Nuno's signature detail.
+// Key cap, Zodnote's signature detail.
 const kbdVariants = cva(
   'inline-flex items-center justify-center border border-line-strong bg-surface font-mono leading-none text-ink shadow-key',
   {

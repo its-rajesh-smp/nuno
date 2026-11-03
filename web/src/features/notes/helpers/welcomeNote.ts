@@ -2,7 +2,7 @@ import type { NoteDraft } from '../types/note';
 
 // Shown once, on the very first visit.
 export const WELCOME_NOTE: NoteDraft = {
-  title: 'Welcome to Nuno',
+  title: 'Welcome to Zodnote',
   content: [
     '<p>Just start typing. Everything saves automatically, in this browser only.</p>',
     '<h2>Try it</h2>',

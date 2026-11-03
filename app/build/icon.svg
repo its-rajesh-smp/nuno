@@ -1,12 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <!-- Nuno logo: a highlighted word and a text cursor, on Apple's 824px icon grid.
+  <!-- Zodnote logo: a note page on a butter-yellow tile, on Apple's 824px icon grid.
        Same mark as www/src/app/icon.svg. -->
   <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde047" />
+      <stop offset="1" stop-color="#facc15" />
+    </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
       <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.28" />
     </filter>
   </defs>
-  <rect x="100" y="100" width="824" height="824" rx="185" fill="#1c1917" filter="url(#shadow)" />
-  <rect x="270" y="462" width="330" height="100" rx="50" fill="#fef08a" />
-  <rect x="650" y="352" width="56" height="320" rx="28" fill="#ffffff" />
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#tile)" filter="url(#shadow)" />
+  <g transform="translate(100 100) scale(12.875)">
+    <path d="M19 14h18l10 10v24a3 3 0 0 1-3 3H19a3 3 0 0 1-3-3V17a3 3 0 0 1 3-3z" fill="#fff" />
+    <path d="M37 14v7a3 3 0 0 0 3 3h7z" fill="#fde68a" />
+    <rect x="21" y="30" width="20" height="3.2" rx="1.6" fill="#1c1917" />
+    <rect x="21" y="37" width="20" height="3.2" rx="1.6" fill="#1c1917" />
+    <rect x="21" y="44" width="12" height="3.2" rx="1.6" fill="#1c1917" />
+  </g>
 </svg>

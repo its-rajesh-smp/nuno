@@ -2,8 +2,8 @@ import type { AppState, Note, NoteMeta } from '@/features/notes/types/note';
 import type { NotesStorage } from './storage';
 
 // Notes live in this browser's localStorage, one key per note.
-const NOTE_PREFIX = 'nuno:note:';
-const STATE_KEY = 'nuno:state';
+const NOTE_PREFIX = 'zodnote:note:';
+const STATE_KEY = 'zodnote:state';
 
 const noteKey = (id: string) => `${NOTE_PREFIX}${id}`;
 const toMeta = ({ id, title, createdAt, updatedAt }: Note): NoteMeta => ({ id, title, createdAt, updatedAt });

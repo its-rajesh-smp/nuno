@@ -1,6 +1,6 @@
 {
-  "name": "nuno",
-  "productName": "Nuno",
+  "name": "zodnote",
+  "productName": "Zodnote",
   "version": "0.1.0",
   "description": "A simple, private notepad. No login, no clutter.",
   "main": "out/main/index.js",
@@ -14,8 +14,8 @@
     "dist": "electron-vite build && electron-builder --mac"
   },
   "build": {
-    "appId": "com.nuno.notes",
-    "productName": "Nuno",
+    "appId": "ink.zodnote.notes",
+    "productName": "Zodnote",
     "files": [
       "out/**/*"
     ],

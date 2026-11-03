@@ -3,7 +3,7 @@ import { FACTS } from '../helpers/content';
 
 export function FactsRow() {
   return (
-    <section aria-label="Nuno in numbers" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section aria-label="Zodnote in numbers" className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <dl className="reveal grid grid-cols-2 border-y border-line lg:grid-cols-4">
         {FACTS.map((fact, index) => (
           <div

@@ -6,7 +6,7 @@ export default function NotFound() {
       <p className="font-mono text-[13px] text-accent-edge">404</p>
       <h1 className="text-[36px] font-normal tracking-[-0.035em]">This page doesn't exist</h1>
       <Button asChild>
-        <a href="/">Back to Nuno</a>
+        <a href="/">Back to Zodnote</a>
       </Button>
     </main>
   );

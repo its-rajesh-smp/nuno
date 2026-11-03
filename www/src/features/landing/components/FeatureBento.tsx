@@ -17,7 +17,7 @@ export function FeatureBento() {
           <SectionHeading
             badge="Features"
             title="Everything you need to write. Nothing else."
-            description="Nuno does a few things and does them quietly, so the page stays yours."
+            description="Zodnote does a few things and does them quietly, so the page stays yours."
           />
         </div>
         <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-5">

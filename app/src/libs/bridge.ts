@@ -1,10 +1,10 @@
-import type { NunoBridge } from '@shared/bridge';
+import type { ZodnoteBridge } from '@shared/bridge';
 
 declare global {
   interface Window {
-    nuno: NunoBridge;
+    zodnote: ZodnoteBridge;
   }
 }
 
 // The only way the renderer talks to the main process (our "API client").
-export const bridge: NunoBridge = window.nuno;
+export const bridge: ZodnoteBridge = window.zodnote;

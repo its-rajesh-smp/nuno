@@ -4,7 +4,7 @@ import { site } from '@/libs/site';
 
 const COLUMNS = [
   { title: 'Product', links: NAV_LINKS.map((link) => ({ label: link.label, href: `#${link.id}` })) },
-  { title: 'Get Nuno', links: [{ label: 'Download for Mac', href: site.downloadUrl }] },
+  { title: 'Get Zodnote', links: [{ label: 'Download for Mac', href: site.downloadUrl }] },
 ];
 
 export function SiteFooter() {
@@ -33,11 +33,11 @@ export function SiteFooter() {
         </div>
         <p
           aria-hidden="true"
-          className="mt-16 bg-gradient-to-b from-line-strong to-transparent bg-clip-text text-center text-[28vw] leading-[0.8] font-semibold tracking-[-0.06em] text-transparent select-none lg:text-[300px]"
+          className="mt-16 bg-gradient-to-b from-line-strong to-transparent bg-clip-text text-center text-[17vw] leading-[0.8] font-semibold tracking-[-0.06em] text-transparent select-none lg:text-[190px]"
         >
-          nuno
+          zodnote
         </p>
-        <p className="border-t border-line py-6 text-[13px] text-subtle">© 2026 Nuno. Made for people who just want to write.</p>
+        <p className="border-t border-line py-6 text-[13px] text-subtle">© 2026 Zodnote. Made for people who just want to write.</p>
       </div>
     </footer>
   );
