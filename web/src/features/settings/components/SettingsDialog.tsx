@@ -17,11 +17,11 @@ interface SettingsDialogProps {
 export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
   const theme = useThemeStore((s) => s.theme);
   const setTheme = useThemeStore((s) => s.setTheme);
-  const { account, manageAccount } = useAccount();
+  const { account, signOut } = useAccount();
 
-  const manage = () => {
+  const handleSignOut = () => {
     onOpenChange(false);
-    manageAccount();
+    signOut();
   };
 
   return (
@@ -39,8 +39,8 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
             <div className="flex items-center gap-3">
               <AccountSummary account={account} />
               {account ? (
-                <Button variant="secondary" size="sm" onClick={manage}>
-                  Manage
+                <Button variant="secondary" size="sm" onClick={handleSignOut}>
+                  Sign out
                 </Button>
               ) : (
                 <Button variant="secondary" size="sm" asChild>

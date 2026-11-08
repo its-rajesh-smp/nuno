@@ -1,4 +1,4 @@
-import { ChevronsUpDown, LogIn, LogOut, UserCog, UserPlus } from 'lucide-react';
+import { ChevronsUpDown, LogIn, LogOut, UserPlus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
@@ -11,9 +11,8 @@ import { MenuItem } from './ui/MenuItem';
 export function AccountMenu() {
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const { loaded, account, manageAccount, signOut } = useAccount();
+  const { loaded, account, signOut } = useAccount();
 
-  // Close first so the menu isn't left floating over Clerk's profile modal.
   const choose = (action: () => void) => () => {
     setOpen(false);
     action();
@@ -35,16 +34,10 @@ export function AccountMenu() {
         </div>
         <div className="my-1.5 h-px bg-line" />
         {account ? (
-          <>
-            <MenuItem onClick={choose(manageAccount)}>
-              <UserCog />
-              Manage account
-            </MenuItem>
-            <MenuItem onClick={choose(signOut)}>
-              <LogOut />
-              Sign out
-            </MenuItem>
-          </>
+          <MenuItem onClick={choose(signOut)}>
+            <LogOut />
+            Sign out
+          </MenuItem>
         ) : (
           <>
             <MenuItem onClick={choose(() => router.push(authRoutes.signIn))}>

@@ -1,4 +1,5 @@
-import { useClerk, useUser } from '@clerk/nextjs';
+import { useEffect } from 'react';
+import { useAuthStore } from '@/features/auth/stores/useAuthStore';
 
 export interface Account {
   name: string;
@@ -8,21 +9,27 @@ export interface Account {
 
 // The signed-in user in the shape the sidebar needs, or null for a guest.
 export function useAccount() {
-  const { isLoaded, user } = useUser();
-  const clerk = useClerk();
+  const user = useAuthStore((s) => s.user);
+  const loaded = useAuthStore((s) => s.loaded);
+  const load = useAuthStore((s) => s.load);
+  const signOut = useAuthStore((s) => s.signOut);
+
+  useEffect(() => {
+    if (!loaded) load();
+  }, [loaded, load]);
 
   const account: Account | null = user
     ? {
-        name: user.fullName || user.primaryEmailAddress?.emailAddress || 'Your account',
-        email: user.fullName ? (user.primaryEmailAddress?.emailAddress ?? null) : null,
-        imageUrl: user.hasImage ? user.imageUrl : null,
+        name: user.name || user.email,
+        email: user.name ? user.email : null,
+        imageUrl: user.imageUrl,
       }
     : null;
 
   return {
-    loaded: isLoaded,
+    loaded,
     account,
-    manageAccount: () => clerk.openUserProfile(),
-    signOut: () => clerk.signOut(),
+    // Keep the local session cleared even if the request fails.
+    signOut: () => signOut().catch(() => useAuthStore.getState().setUser(null)),
   };
 }

@@ -1,8 +1,5 @@
-import { ClerkProvider } from '@clerk/nextjs';
 import type { Metadata, Viewport } from 'next';
 import { IBM_Plex_Mono, Inter } from 'next/font/google';
-import { authRoutes } from '@/features/auth/helpers/authRoutes';
-import { clerkAppearance } from '@/features/auth/helpers/clerkAppearance';
 import { themeScript } from '@/features/theme/helpers/theme';
 import './globals.css';
 
@@ -31,9 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       {/* Extensions add attributes to <body> (e.g. style="cursor: auto") before hydration. */}
       <body suppressHydrationWarning>
-        <ClerkProvider appearance={clerkAppearance} signInUrl={authRoutes.signIn} signUpUrl={authRoutes.signUp}>
-          {children}
-        </ClerkProvider>
+        {children}
       </body>
     </html>
   );

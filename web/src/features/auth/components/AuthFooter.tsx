@@ -6,7 +6,7 @@ interface AuthFooterProps {
   href: string;
 }
 
-// Under the Clerk card: the sign-in/sign-up switch (moved out of the card) and the legal links.
+// Under the form: the sign-in/sign-up switch and the legal links.
 export function AuthFooter({ prompt, action, href }: AuthFooterProps) {
   return (
     <>

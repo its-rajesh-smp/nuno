@@ -1,5 +1,3 @@
-/* Clerk's styles sit below components and utilities, so Tailwind classes in its appearance win. */
-@layer theme, base, clerk, components, utilities;
 @import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -63,29 +61,6 @@
       transform: translateY(4px) scale(0.98);
     }
   }
-}
-
-/*
- * Clerk's components read these. Pointing them at Zodnote's tokens means
- * they flip with the theme without any Clerk-side dark mode.
- */
-:root {
-  --clerk-color-primary: var(--color-ink);
-  --clerk-color-primary-foreground: var(--color-canvas);
-  --clerk-color-background: var(--color-surface);
-  --clerk-color-foreground: var(--color-ink);
-  --clerk-color-muted: var(--color-sunken);
-  --clerk-color-muted-foreground: var(--color-muted);
-  --clerk-color-neutral: var(--color-ink);
-  --clerk-color-border: var(--color-line-strong);
-  --clerk-color-input: var(--color-surface);
-  --clerk-color-input-foreground: var(--color-ink);
-  --clerk-color-ring: var(--color-accent-edge);
-  --clerk-color-danger: var(--color-danger);
-  --clerk-color-shadow: rgb(28 25 23 / 0.18);
-  --clerk-color-modal-backdrop: rgb(28 25 23 / 0.2);
-  --clerk-border-radius: 0.5rem;
-  --clerk-font-family: var(--font-sans);
 }
 
 /*
